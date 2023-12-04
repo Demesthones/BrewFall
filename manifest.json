@@ -13,10 +13,13 @@
     },
     "action": {
         "default_popup": "popup.html",
-        "default_icon": "images/icon-16.png"
+        "default_icon": "images/potion-16.png"
     },
     "icons": {
-        "16": "images/icon-16.png"
+        "16": "images/potion-16.png",
+        "32": "images/potion-32.png",
+        "48": "images/potion-48.png",
+        "64": "images/potion-64.png"
     },
     "content_scripts": [
         {
