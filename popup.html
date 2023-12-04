@@ -2,20 +2,75 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <title>BrewFall</title>
+        <meta name="BrewFall Popup" content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./popup.css" />
+        <link rel="stylesheet" href="./css/normalize.css">
+        <link rel="stylesheet" href="./css/skeleton.css">
+        <link rel="stylesheet" href="./css/popup.css" />
+        
     </head>
     <body>
-        <div class="post-header">
-            <h1>BrewFall</h1>
+        <div class="container">
+            <div class="row" id="header">
+                <div class="eleven columns">
+                    <div class="post-header-title">
+                        <h5>BrewFall</h5>
+                    </div>
+                </div>
+                <div class="one column">
+                    <div class="post-header-profile">
+                        <button id="profile" class="button-icon" style="color: whitesmoke; display:none;"><i class="fa-solid fa-user fa-2x" alt=""></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="body">
+                <div class="container">
+                    <div class="row" style="display:none;">
+                        <div class="twelve columns decklist-topbar">
+                            <div class="list-selector-wrapper">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="twelve columns">
+                            <div class="container" id="decklist-scrollbox">
+            
+                            </div>
+                            <template id="row-item">
+                                <div class="row">
+                                    <div class="one columns card-box-amount">
+
+                                    </div>
+                                    <div class="nine columns card-box-name">
+
+                                    </div>
+                                    <div class="two columns card-box-utils">
+                                        <button class="button-remove-amount" style="color: slategray"><i class="fa-solid fa-minus fa-xl"></i></button>
+                                        <button class="button-add-amount" style="color: slategray"><i class="fa-solid fa-plus fa-xl"></i></button>
+                                        <button class="button-delete-row" style="color: tomato"><i class="fa-solid fa-delete-left fa-xl"></i></button>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="footer">
+                <div class="offset-by-ten one columns btn-area-bottom">
+                    <button id="copy" class="button-icon" style="color: whitesmoke"><i class="fa-solid fa-clipboard fa-2x"></i></button>
+                </div>
+                <div class="one columns btn-area-bottom">
+                    <button id="clear" class="button-icon" style="color: tomato"><i class="fa-regular fa-trash-can fa-2x"></i></button>
+                </div>
+            </div>
+            </div>
         </div>
-        <div class="textarea-wrapper">
-            <textarea id="decklist-scrollbox"></textarea><br />
-        </div>
-        <div class="btn-area-bottom">
-            <button id="copy">Copy</button><button id="clear">Clear</button>
-        </div>
-        <script src="./popup.js" type="module"></script>
+        <script src="./scripts/popup.js" type="module"></script>
+        <script src="./scripts/fontawesome.min.js" type="module"></script>
+        <script src="./scripts/regular.min.js" type="module"></script>
+        <script src="./scripts/solid.min.js" type="module"></script>
     </body>
 </html>

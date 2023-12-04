@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "BrewFall",
-    "description": "Create easily portal decklists from Scryfall searches!",
+    "description": "Create easily portalable decklists from Scryfall searches!",
     "version": "1.0",
     "permissions": [
         "activeTab",
@@ -20,13 +20,23 @@
     },
     "content_scripts": [
         {
-            "js": ["scripts/content.js"],
-            "css": ["scripts/content.css"],
+            "js": ["scripts/content.js",
+                    "scripts/fontawesome.min.js",
+                    "scripts/regular.min.js",
+                    "scripts/solid.min.js"],
+            "css": ["css/content.css",
+                    "css/fontawesome.min.css",
+                    "css/regular.min.css"],
             "matches": [
                 "https://scryfall.com/search*",
                 "https://scryfall.com/card*"
             ]
         }
-    ]
+    ],
+    "web_accessible_resources": [{
+        "resources": ["css/regular.min.css",
+                    "css/fontawesome.min.css"],
+        "matches": ["<all_urls>"]
+    }]
     
 }

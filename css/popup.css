@@ -1,0 +1,90 @@
+body{
+    width: 600px !important;
+    color: #f5f6f7;
+    background-color: #2b253a;
+}
+
+.container {
+    padding: 0px !important;
+    margin: 0px !important;
+    width: 100%;
+}
+
+.post-header-title {
+    display: flex;
+    justify-content: center;
+}
+.post-header-title > h5{
+    margin: 0px;
+    justify-content: center;
+}
+.post-header-profile {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 36px;
+}
+.post-header-profile > button {
+    padding: 3px; 
+    align-self: center;
+}
+
+.row {
+    width: 100% !important;
+}
+.row:hover > .card-box-utils {
+    display: flex;
+}
+
+.button-icon,
+.button-remove-amount,
+.button-add-amount,
+.button-delete-row {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+    line-height: 24px;
+    height: 24px;
+    width: 2rem;
+
+}
+
+.decklist-topbar {
+    height: 1rem;
+    background-color: #f5f6fa;
+}
+#decklist-scrollbox {
+    min-height: 10rem;
+    max-height: 30rem;
+    overflow-y: scroll;
+    color: #2b253a;
+    background-color: #f5f6fa;
+    margin: 0px !important;
+}
+#decklist-scrollbox > .row:hover {
+    background-color: #cfcfcf;
+}
+.card-box-amount {
+    text-align: right;
+    padding-right: 8px;
+    white-space: pre-wrap;
+}
+.card-box-utils {
+    display: none;
+    justify-content: center;
+}
+.btn-area-bottom {
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+.btn-area-bottom > button{
+    padding: 3px;
+    align-self: center;
+}
