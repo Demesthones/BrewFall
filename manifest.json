@@ -4,8 +4,6 @@
     "description": "Create easily portalable decklists from Scryfall searches!",
     "version": "1.0",
     "permissions": [
-        "activeTab",
-        "scripting",
         "storage"
     ],
     "background": {
