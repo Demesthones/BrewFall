@@ -10,7 +10,11 @@ chrome.runtime.onInstalled.addListener((details) => {
 chrome.runtime.onMessage.addListener((response, sender, sendReponse) => {
     if (response.action === 'update_storage'){
         chrome.storage.local.get("global_list", function(items){
-            let current_list = items.global_list;
+            if(items.global_list === undefined){
+                current_list = [];
+            } else {
+                let current_list = items.global_list;
+            }
             current_list.push(response.action_data);
             chrome.storage.local.set({global_list:current_list});
         });

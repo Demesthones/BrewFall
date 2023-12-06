@@ -37,7 +37,7 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
 });
 
 
-const updateScrollBox = async function(){
+async function updateScrollBox() {
     let content = await getGlobalList();
     let target = scrollbox;
     const template = document.querySelector("#row-item");
@@ -74,18 +74,18 @@ const updateScrollBox = async function(){
     }
 }
 
-const getGlobalList = async () => {
-    return new Promise((resolve) => {
-        let gl = "";
-        try{
-            chrome.storage.local.get("global_list", function(items){
-                gl = items.global_list;
-                resolve(gl);
-            });
-        } catch (error){
-            console.log("error", error);
-        }
-    })
+function getGlobalList() {
+    let gl = "";
+    try{
+        chrome.storage.local.get("global_list", function(items){
+            gl = items.global_list;
+        });
+    } catch (error){
+        console.log("error", error);
+    }
+    return new Promise((resolve, reject) => {
+        resolve(gl);
+    });
 }
 
 const btns = document.querySelectorAll('button');
