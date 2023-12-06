@@ -43,6 +43,8 @@ const updateScrollBox = async function(){
     const template = document.querySelector("#row-item");
     if (content === ""){
         target.textContent = "";
+    } else if (content === undefined){
+        console.log("content undefined");
     } else {
         target.textContent = "";
         let current_list = content.reduce((cnt, cur) => (cnt[cur] = cnt[cur] + 1 || 1, cnt), {});
