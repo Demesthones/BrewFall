@@ -42,10 +42,9 @@ addListener();
 
 function updateScrollBox() {
     chrome.storage.local.get(["global_list"]).then((result) => {
-        console.log(result.global_list);
         let target = scrollbox;
         const template = document.querySelector("#row-item");
-        if (result === ""){
+        if (result.global_list === "" || result.global_list == undefined){
             target.textContent = "";
         } else {
             target.textContent = "";
@@ -82,13 +81,13 @@ for (let i of btns){
     i.addEventListener('click', function(){
         if(this.id === 'copy'){
             chrome.storage.local.get(["global_list"]).then((result) => {
-                //console.log(content);
-                let content = result.global_list.reduce((cnt, cur) => (cnt[cur] = cnt[cur] + 1 || 1, cnt), {});
                 let cb = "";
-                for(const n in content){
-                    cb += `${content[n]}  ${n}\n`;
-                }
-                //console.log(cb);
+                if(result != undefined){
+                    let content = result.global_list.reduce((cnt, cur) => (cnt[cur] = cnt[cur] + 1 || 1, cnt), {});
+                    for(const n in content){
+                        cb += `${content[n]}  ${n}\n`;
+                    }
+                } 
                 navigator.clipboard.writeText(cb);
             });
         }
